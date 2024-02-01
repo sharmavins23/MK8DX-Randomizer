@@ -24,6 +24,8 @@ article {
     align-items: center;
     justify-content: center;
 
+    gap: 1em;
+
     width: 80%;
 }
 
