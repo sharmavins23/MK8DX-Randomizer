@@ -1,0 +1,23 @@
+﻿Name,Mini-Turbo,GroundS,WaterS,GliderS,AGS,Accel,Weight,GroundH,WaterH,GliderH,AGH,Traction,Invincibility
+Roller,6,0,3,3,0,6,0,4,4,4,4,4,0
+Azure Roller,6,0,3,3,0,6,0,4,4,4,4,4,0
+Button,5,1,2,2,2,5,0,3,3,2,4,3,3
+Leaf Tires,5,1,2,2,2,5,0,3,3,2,4,3,3
+Cushion,5,1,1,4,1,4,1,2,1,3,2,6,6
+Sponge,5,1,1,4,1,4,1,2,1,3,2,6,4
+GLA Tires,4,2,3,3,2,4,2,3,3,3,3,5,5
+Standard,4,2,3,3,2,4,2,3,3,3,3,5,4
+Blue Standard,4,2,3,3,2,4,2,3,3,3,3,5,4
+Monster,3,3,2,1,2,2,4,0,1,1,0,7,6
+Hot Monster,3,3,2,1,2,2,4,0,1,1,0,7,6
+Ancient Tires,3,3,2,1,2,2,4,0,1,1,0,7,5
+Slim,3,3,2,2,4,2,2,4,4,4,3,1,5
+Wood,3,3,2,2,4,2,2,4,4,4,3,1,5
+Crimson Slim,3,3,2,2,4,2,2,4,4,4,3,1,5
+Off-Road,3,3,4,1,2,3,3,1,1,2,2,6,6
+Retro Off-Road,3,3,4,1,2,3,3,1,1,2,2,6,6
+Triforce Tires,3,3,4,1,2,3,3,1,1,2,2,6,6
+Metal,2,4,3,2,1,0,4,2,2,0,1,2,6
+Gold Tires,2,4,3,2,1,0,4,2,2,0,1,2,5
+Slick,2,4,0,0,4,1,3,2,0,1,2,0,5
+Cyber Slick,2,4,0,0,4,1,3,2,0,1,2,0,5
