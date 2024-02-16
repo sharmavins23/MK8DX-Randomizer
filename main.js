@@ -148,6 +148,55 @@ function fetchTireData() {
 fetchTireData(); // On load
 var prevTire = 0;
 
+// * Glider stats
+var gliders = [];
+// Fetch the tire data
+function fetchGliderData() {
+    fetch("data/gliders.csv")
+        .then((response) => response.text())
+        .then((text) => {
+            // Map the CSV data to a json array
+            // Remove line 1
+            let lines = text.split("\n");
+            lines.shift();
+
+            // Remove the \r from each line
+            lines = lines.map((line) => line.replace("\r", ""));
+
+            // Split each line on commas
+            lines = lines.map((line) => line.split(","));
+
+            // Remove any empty lines
+            lines = lines.filter((line) => line.length > 1);
+
+            // Convert to charData objects
+            gliders = lines.map((line) => {
+                return {
+                    name: line[0],
+                    miniTurbo: parseInt(line[1]),
+                    speed: {
+                        ground: parseInt(line[2]),
+                        water: parseInt(line[3]),
+                        glider: parseInt(line[4]),
+                        antiGravity: parseInt(line[5]),
+                    },
+                    acceleration: parseInt(line[6]),
+                    weight: parseInt(line[7]),
+                    handling: {
+                        ground: parseInt(line[8]),
+                        water: parseInt(line[9]),
+                        glider: parseInt(line[10]),
+                        antiGravity: parseInt(line[11]),
+                    },
+                    traction: parseInt(line[12]),
+                    invincibility: parseInt(line[13]),
+                };
+            });
+        });
+}
+fetchGliderData(); // On load
+var prevGlider = 0;
+
 // ===== Reroll ================================================================
 
 // Converts a statistical value from base integers to a percentage for sliders
@@ -239,6 +288,7 @@ function reroll() {
     let characterIndex = Math.floor(Math.random() * characters.length);
     let vehicleIndex = Math.floor(Math.random() * vehicles.length);
     let tireIndex = Math.floor(Math.random() * tires.length);
+    let gliderIndex = Math.floor(Math.random() * gliders.length);
 
     // Re-pick any that are the same as the previous choice
     while (characterIndex === prevCharacter) {
@@ -250,16 +300,23 @@ function reroll() {
     while (tireIndex === prevTire) {
         tireIndex = Math.floor(Math.random() * tires.length);
     }
+    while (gliderIndex === prevGlider) {
+        gliderIndex = Math.floor(Math.random() * gliders.length);
+    }
     prevCharacter = characterIndex;
     prevKart = vehicleIndex;
     prevTire = tireIndex;
+    prevGlider = gliderIndex;
 
+    // Set selections
     let character = characters[characterIndex];
     let vehicle = vehicles[vehicleIndex];
     let tire = tires[tireIndex];
+    let glider = gliders[gliderIndex];
 
     // Update stats
     updateStats(character, "chars", null);
     updateStats(vehicle, "karts", vehicle.type);
     updateStats(tire, "tires", null);
+    updateStats(glider, "gliders", null);
 }
