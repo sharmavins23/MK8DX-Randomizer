@@ -248,6 +248,63 @@
 
         <footer>
             <button onclick="reroll()">Reroll!</button>
+
+            <div class="display">
+                <div class="images">
+                    <img id="char" src="img/chars/Mario.webp" alt="" />
+                    <img id="kart" src="img/karts/Standard Kart.webp" alt="" />
+                    <img id="tire" src="img/tires/Standard.webp" alt="" />
+                    <img
+                        id="glider"
+                        src="img/gliders/Super Glider.webp"
+                        alt=""
+                    />
+                </div>
+                <div class="stats">
+                    <div class="labelset">
+                        <input id="miniTurbo" type="range" disabled />
+                        <label for="miniTurbo">Mini-Turbo</label>
+                    </div>
+                    <fieldset id="speed">
+                        <legend>Speed</legend>
+                        <input id="ground" type="range" disabled />
+                        <label for="ground">Ground</label>
+                        <input id="water" type="range" disabled />
+                        <label for="water">Water</label>
+                        <input id="air" type="range" disabled />
+                        <label for="air">Air</label>
+                        <input id="antiGravity" type="range" disabled />
+                        <label for="antiGravity">Anti-Gravity</label>
+                    </fieldset>
+                    <div class="labelset">
+                        <input id="acceleration" type="range" disabled />
+                        <label for="acceleration">Acceleration</label>
+                    </div>
+                    <div class="labelset">
+                        <input id="weight" type="range" disabled />
+                        <label for="weight">Weight</label>
+                    </div>
+                    <fieldset id="handling">
+                        <legend>Handling</legend>
+                        <input id="ground" type="range" disabled />
+                        <label for="ground">Ground</label>
+                        <input id="water" type="range" disabled />
+                        <label for="water">Water</label>
+                        <input id="air" type="range" disabled />
+                        <label for="air">Air</label>
+                        <input id="antiGravity" type="range" disabled />
+                        <label for="antiGravity">Anti-Gravity</label>
+                    </fieldset>
+                    <div class="labelset">
+                        <input id="traction" type="range" disabled />
+                        <label for="traction">Traction</label>
+                    </div>
+                    <div class="labelset">
+                        <input id="invincibility" type="range" disabled />
+                        <label for="invincibility">Invincibility</label>
+                    </div>
+                </div>
+            </div>
         </footer>
     </body>
 </html>

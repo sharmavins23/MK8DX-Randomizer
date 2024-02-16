@@ -16,6 +16,17 @@ body {
 
 /* ===== Header ============================================================= */
 
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1em;
+
+    width: 80%;
+}
+
 /* ===== Article ============================================================ */
 
 article {
@@ -90,6 +101,87 @@ article > .display > .stats > .labelset {
 }
 
 article > .display > .stats > fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1em;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 0.5em;
+}
+
+/* ===== Footer ============================================================= */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1em;
+
+    width: 80%;
+}
+
+footer > .display {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+footer > .display > .images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    place-items: center;
+
+    width: 50%;
+
+    margin: 0px;
+    padding: 0px;
+    border: 5px solid lightgoldenrodyellow;
+    border-top-left-radius: 1em;
+
+    gap: 1em;
+}
+
+footer > .display > .images > img {
+    width: 30%;
+    height: auto;
+}
+
+footer > .display > .stats {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+
+    width: 50%;
+
+    background-color: lightgoldenrodyellow;
+    border: 5px solid lightgoldenrodyellow;
+    border-bottom-right-radius: 1em;
+    padding: 1em;
+}
+
+footer > .display > .stats > .labelset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1em;
+
+    align-items: center;
+    justify-content: center;
+
+    padding-left: 1em;
+    padding-right: 1em;
+
+    margin-bottom: 0.5em;
+}
+
+footer > .display > .stats > fieldset {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 1em;

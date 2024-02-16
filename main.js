@@ -283,6 +283,153 @@ function updateStats(selection, part, type) {
     invincibility.value = toPercent(selection.invincibility);
 }
 
+// Sum and update all part stats
+function updateCombinedStats(character, vehicle, tire, glider) {
+    let characterImage = document.querySelector(
+        `footer > .display > .images > img#char`
+    );
+    let vehicleImage = document.querySelector(
+        `footer > .display > .images > img#kart`
+    );
+    let tireImage = document.querySelector(
+        `footer > .display > .images > img#tire`
+    );
+    let gliderImage = document.querySelector(
+        `footer > .display > .images > img#glider`
+    );
+    let miniTurbo = document.querySelector(
+        `footer > .display > .stats > .labelset > input#miniTurbo`
+    );
+    let speedGround = document.querySelector(
+        `footer > .display > .stats > fieldset#speed > input#ground`
+    );
+    let speedWater = document.querySelector(
+        `footer > .display > .stats > fieldset#speed > input#water`
+    );
+    let speedGlider = document.querySelector(
+        `footer > .display > .stats > fieldset#speed > input#air`
+    );
+    let speedAntiGravity = document.querySelector(
+        `footer > .display > .stats > fieldset#speed > input#antiGravity`
+    );
+    let acceleration = document.querySelector(
+        `footer > .display > .stats > .labelset > input#acceleration`
+    );
+    let weight = document.querySelector(
+        `footer > .display > .stats > .labelset > input#weight`
+    );
+    let handlingGround = document.querySelector(
+        `footer > .display > .stats > fieldset#handling > input#ground`
+    );
+    let handlingWater = document.querySelector(
+        `footer > .display > .stats > fieldset#handling > input#water`
+    );
+    let handlingGlider = document.querySelector(
+        `footer > .display > .stats > fieldset#handling > input#air`
+    );
+    let handlingAntiGravity = document.querySelector(
+        `footer > .display > .stats > fieldset#handling > input#antiGravity`
+    );
+    let traction = document.querySelector(
+        `footer > .display > .stats > .labelset > input#traction`
+    );
+    let invincibility = document.querySelector(
+        `footer > .display > .stats > .labelset > input#invincibility`
+    );
+
+    // Update images
+    characterImage.src = `img/chars/${character.name
+        .replace(".", "")
+        .replace("(", "")
+        .replace(")", "")}.webp`;
+    vehicleImage.src = `img/karts/${vehicle.name
+        .replace(".", "")
+        .replace("(", "")
+        .replace(")", "")}.webp`;
+    tireImage.src = `img/tires/${tire.name
+        .replace(".", "")
+        .replace("(", "")
+        .replace(")", "")}.webp`;
+    gliderImage.src = `img/gliders/${glider.name
+        .replace(".", "")
+        .replace("(", "")
+        .replace(")", "")}.webp`;
+
+    // Sum and update stats
+    miniTurbo.value = toPercent(
+        character.miniTurbo +
+            vehicle.miniTurbo +
+            tire.miniTurbo +
+            glider.miniTurbo
+    );
+    speedGround.value = toPercent(
+        character.speed.ground +
+            vehicle.speed.ground +
+            tire.speed.ground +
+            glider.speed.ground
+    );
+    speedWater.value = toPercent(
+        character.speed.water +
+            vehicle.speed.water +
+            tire.speed.water +
+            glider.speed.water
+    );
+    speedGlider.value = toPercent(
+        character.speed.glider +
+            vehicle.speed.glider +
+            tire.speed.glider +
+            glider.speed.glider
+    );
+    speedAntiGravity.value = toPercent(
+        character.speed.antiGravity +
+            vehicle.speed.antiGravity +
+            tire.speed.antiGravity +
+            glider.speed.antiGravity
+    );
+    acceleration.value = toPercent(
+        character.acceleration +
+            vehicle.acceleration +
+            tire.acceleration +
+            glider.acceleration
+    );
+    weight.value = toPercent(
+        character.weight + vehicle.weight + tire.weight + glider.weight
+    );
+    handlingGround.value = toPercent(
+        character.handling.ground +
+            vehicle.handling.ground +
+            tire.handling.ground +
+            glider.handling.ground
+    );
+    handlingWater.value = toPercent(
+        character.handling.water +
+            vehicle.handling.water +
+            tire.handling.water +
+            glider.handling.water
+    );
+    handlingGlider.value = toPercent(
+        character.handling.glider +
+            vehicle.handling.glider +
+            tire.handling.glider +
+            glider.handling.glider
+    );
+    handlingAntiGravity.value = toPercent(
+        character.handling.antiGravity +
+            vehicle.handling.antiGravity +
+            tire.handling.antiGravity +
+            glider.handling.antiGravity
+    );
+    traction.value = toPercent(
+        character.traction + vehicle.traction + tire.traction + glider.traction
+    );
+    invincibility.value = toPercent(
+        character.invincibility +
+            vehicle.invincibility +
+            tire.invincibility +
+            glider.invincibility
+    );
+}
+
 function reroll() {
     // Pick a random build
     let characterIndex = Math.floor(Math.random() * characters.length);
@@ -319,4 +466,7 @@ function reroll() {
     updateStats(vehicle, "karts", vehicle.type);
     updateStats(tire, "tires", null);
     updateStats(glider, "gliders", null);
+
+    // Update combined stats
+    updateCombinedStats(character, vehicle, tire, glider);
 }
